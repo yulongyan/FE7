@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D旋转相册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+        	background: skyblue;
+            perspective: 1800px;
+        }
+        
+        #box {
+            transform-style: preserve-3d;
+            width: 350px;
+            height: 350px;
+            margin: 100px auto 0;
+            position: relative;
+        }
+		.box{
+			transform-style: preserve-3d;
+			width: 250px;
+            height: 250px;
+		}
+    
+        img {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(350px);
+        }
+
+        img:nth-child(2) {
+            transform: rotateY(60deg) translateZ(350px);
+        }
+
+        img:nth-child(3) {
+            transform: rotateY(120deg) translateZ(350px);
+        }
+
+        img:nth-child(4) {
+            transform: rotateY(180deg) translateZ(350px);
+        }
+
+        img:nth-child(5) {
+            transform: rotateY(240deg) translateZ(350px);
+        }
+
+        img:nth-child(6) {
+            transform: rotateY(300deg) translateZ(350px);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="box">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+        </div>
+    </div>
+</body>
+<script src="jquery.js"></script>
+    <script>
+        var box = $('.box');
+
+        var nowRotateX = 0;
+        var nowRotateY = 0;
+
+        $(document).mousedown(function(ev) {
+            startX = ev.clientX;
+            startY = ev.clientY;
+
+
+
+            $(document).mousemove(function(ev) {
+                var deltaX = ev.clientX - startX;
+                var deltaY = ev.clientY - startY;
+
+                nowRotateX += -deltaY / 100;
+                nowRotateY += deltaX / 100;
+
+                box.css("transform", " rotateY(" + nowRotateY + "deg)");
+                return false;
+            })
+        })
+
+
+        $(document).mouseup(function() {
+            $(document).off('mousemove');
+            box.css("transition", "all 1s ease 0s");	
+        })
+    </script>
+
+</html>
