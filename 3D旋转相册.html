@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3D旋转相册</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+        	background: skyblue;
+            perspective: 1800px;
+        }
+        
+        #box {
+            transform-style: preserve-3d;
+            width: 350px;
+            height: 350px;
+            margin: 100px auto 0;
+            position: relative;
+            animation: xuanzhuan 5s linear 99999999;
+            transform-origin: 175px 100px;
+        }
+
+        @keyframes xuanzhuan {
+            0% {
+                transform: rotateY(0deg);
+            }
+            16.6% {
+                transform: rotateY(60deg);
+            }
+            33.2% {
+                transform: rotateY(120deg);
+            }
+            49.8% {
+                transform: rotateY(180deg);
+            }
+            66.4% {
+                transform: rotateY(240deg);
+            }
+            83% {
+                transform: rotateY(300deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        img {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        
+        img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(252px);
+            animation: xz1 5s ease 1 10s;
+            animation-fill-mode: forwards;
+        }
+
+        img:nth-child(2) {
+            transform: rotateY(60deg) translateZ(252px);
+            animation: xz2 5s ease 1 10s;
+            animation-fill-mode: forwards;
+        }
+
+        img:nth-child(3) {
+            transform: rotateY(120deg) translateZ(252px);
+            animation: xz3 5s ease 1 10s;
+            animation-fill-mode: forwards;
+        }
+
+        img:nth-child(4) {
+            transform: rotateY(180deg) translateZ(252px);
+            animation: xz4 5s ease 1 10s;
+            animation-fill-mode: forwards;
+        }
+
+        img:nth-child(5) {
+            transform: rotateY(240deg) translateZ(252px);
+            animation: xz5 5s ease 1 10s;
+            animation-fill-mode: forwards;
+        }
+
+        img:nth-child(6) {
+            transform: rotateY(300deg) translateZ(252px);
+            animation: xz6 5s ease 1 10s;
+            animation-fill-mode: forwards;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="box">
+            <div class="zhengfangxing">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+                <img src="xs.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>
