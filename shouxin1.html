@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		ul{
+			position: relative;
+		}
+		
+		li{
+			list-style-type: none;
+			position: absolute;
+		}
+		
+		li:nth-child(1){
+			z-index: 3;
+			top: 72px;
+			margin-left: 130px;
+			animation: zhuan 1.5s ease-in-out infinite;
+		}
+		li:nth-child(2){
+			z-index: 2;
+			animation: zhuan 3s linear 1s infinite;
+		}
+		li:nth-child(3){
+			z-index: 1;
+			top: 30px;
+			margin-left: 80px;
+			animation: zhuan 2s linear 2s infinite;
+		}
+		@-webkit-keyframes zhuan {
+			0% {
+  				 	transform: rotateZ(0);
+				}
+			30% {
+    				transform: rotateZ(360deg);
+				}
+			100% {
+   					transform: rotateZ(360deg);
+				}
+		}
+	</style>
+	<div class="box">
+		<ul>
+			<li><img src="images/zhangxin1_1.png"/></li>
+			<li><img src="images/zhangxin1_2.png"/></li>
+			<li><img src="images/zhangxiin1_3.png"/></li>
+		</ul>
+	</div>
+	<body>
+	</body>
+</html>

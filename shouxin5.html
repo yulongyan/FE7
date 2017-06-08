@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		ul{
+			position: relative;
+			margin-top: 200px;
+			margin-left: 100px;
+		}
+		li{
+			list-style-type: none;
+			position: absolute;
+		}
+		li:nth-child(1){
+			animation: rocket 0.2s linear infinite alternate;
+		}
+        @keyframes rocket {
+            0% {
+                transform: translateX(0px) translateY(0px);
+            }
+            100% {
+                transform: translateX(10px) translateY(8px);
+            }
+        }
+
+		li:nth-child(2){
+			margin-left: -20px;
+			animation: line 0.3s linear infinite;
+		}
+		li:nth-child(3){
+			margin-left: -30px;
+			margin-top: -130px;
+			animation: line 0.3s linear infinite;
+		}
+		li:nth-child(4){
+			margin-top: 180px;
+			margin-left: 130px;
+			animation: line 0.3s linear infinite;
+		}
+		li:nth-child(5){
+			margin-top: 180px;
+			margin-left: 130px;
+			animation: line 0.3s linear infinite;
+		}
+		@keyframes line {
+            0% {
+                opacity: 0;
+                transform: translateY(-300px) translateX(300px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0px) translateX(0px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-300px) translateX(-300px);
+            }
+        }
+
+	</style>
+	<body>
+		<div>
+			<ul>
+				<li><img src="images/shouxin5_5.png"/></li>
+				<li><img src="images/shouxin5_1.png"/></li>
+				<li><img src="images/shouxin5_2.png"/></li>
+				<li><img src="images/shouxin5_3.png"/></li>
+				<li><img src="images/shouxin5_4.png"/></li>
+			</ul>
+		</div>
+	</body>
+</html>

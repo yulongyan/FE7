@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		ul{
+			position: relative;
+		}
+		li{
+			list-style-type: none;
+			position: absolute;
+		}
+		li:nth-child(1){
+			top: 180px;
+			margin-left: 178px;
+		}
+		li:nth-child(2){
+			animation: shan 3s linear 0s infinite;
+			top: 100px;
+			margin-left: 100px;
+		}
+		@-webkit-keyframes shan {
+			0%{
+				opacity: 0;
+			}
+			50%{
+				opacity: 1;
+			}
+			100%{
+				opacity: 0;
+			}
+		}
+	</style>
+	<body>
+		<div>
+			<ul>
+				<li><img src="images/shouxin2_1.png"/></li>
+				<li><img src="images/shouxin2_2.png"/></li>
+			</ul>
+		</div>
+	</body>
+</html>

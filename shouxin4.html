@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		ul{
+			position: relative;
+			margin-top: 470px;
+		}
+		li{
+			list-style-type: none;
+			position: absolute;
+		}
+		li:nth-child(1){
+			margin-left: 80px;
+		}
+		li:nth-child(2){
+			animation: luo 5s linear infinite;
+		}
+		@-webkit-keyframes luo {
+			0% {
+   				transform: rotateZ(-10deg) translateX(0) translateY(-250px);
+    			opacity: 0;
+			}
+			30% {
+    			transform: rotateZ(10deg) translateX(150px) translateY(-50px);
+    			opacity: 1;
+			}
+			60% {
+    			transform: rotateZ(30deg) translateX(300px) translateY(150px);
+    			opacity: 0;
+			}
+			100% {
+    			transform: rotateZ(30deg) translateX(300px) translateY(150px);
+    			opacity: 0;
+			}
+		}
+	</style>
+	<body>
+		<div>
+			<ul>
+				<li><img src="images/shouxin4_1.png"/></li>
+				<li><img src="images/shouxin4_2.png"/></li>
+			</ul>
+		</div>
+	</body>
+</html>
