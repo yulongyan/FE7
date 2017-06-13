@@ -1,0 +1,61 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+    <title></title>  
+</head>  
+<style type="text/css">
+	canvas{
+		border: 1px solid black;
+	}
+</style>
+<body>  
+    <canvas width="600" height="600" id="canvas"></canvas>  
+    <script>   
+        var canvas=document.getElementById('canvas');  
+        var cxt=canvas.getContext('2d');    
+        var time=0;  
+        function draw(){
+            cxt.clearRect(0,0,600,600);
+            cxt.strokeStyle="#000";  
+            cxt.beginPath();
+            cxt.arc(300,300,180,0,360,false);  
+            cxt.closePath();  
+            cxt.stroke();    
+  
+            cxt.beginPath();  
+            cxt.arc(300,300,20,0,360,false);  
+            cxt.closePath();  
+            
+            var sunColor=cxt.createRadialGradient(300,300,0,300,300,10);   
+            cxt.fillStyle="red";  
+            cxt.fill();  
+
+            cxt.save();  
+            cxt.translate(300,300);  
+            cxt.rotate(time*365/360*Math.PI/180);  
+            cxt.beginPath();  
+            cxt.arc(180,0,10,0,360,false); 
+            
+            var earthColorx=cxt.createRadialGradient(180,0,0,180,0,10);  
+            cxt.strokeStyle="#050c12";  
+            cxt.fillStyle="blue";  
+            cxt.fill();  
+            cxt.closePath();   
+
+            cxt.save(); 
+            cxt.strokeStyle="#FFF";  
+            cxt.translate(180,0);  
+               
+            cxt.beginPath();  
+            var moonColor=cxt.createRadialGradient(30,0,0,30,0,5);  
+            cxt.restore();  
+            cxt.restore();  
+
+            time+=1;  
+        }  
+            draw();  
+            setInterval(draw,50);  
+    </script>  
+</body>  
+</html>
