@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>手机携程</title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		a {
+		text-decoration: none;
+	}
+		body{
+			height: 100%;
+			font: 400 14px/1.5 Tahoma,"Lucida Grande",Verdana,"Microsoft Yahei",STXihei,hei;
+    		overflow-x: hidden;
+    		-webkit-tap-highlight-color: transparent;
+    		-webkit-text-size-adjust: none;
+    		-moz-user-select: none;
+    		margin: 0 auto;
+    		background: #f2f2f2;
+		}
+		#nav{
+			position: fixed;
+    		top: 0;
+    		left: 50%;
+    		z-index: 12;
+   			width: 100%;
+    		height: 3.21rem;
+    		padding: 7px 3.57em 7px 8px;
+    		background-color: #F6F6F6;
+    		border-bottom: 1px solid #CCC;
+    		border-top: 1px solid #CCC;
+    		-webkit-transform: translateX(-50%);
+    		transform: translateX(-50%);
+		}
+		#nav>input{
+			margin-left: 7%;
+			width: 80%;
+			height: 70%;
+			overflow: hidden;
+    		padding: 0 5px;
+    		line-height: 2em;
+    		border-radius: 5px;
+    		background-color: #fff;
+    		color: #666;
+    		font-size: .86em;
+    		border: 1px solid #999;
+    		box-shadow: 0 2px 4px rgba(0,0,0,.2);
+    		float: left;
+/*    		background: url(images/ss.png) no-repeat;*/
+		}
+		.dl{
+			width: 5%;
+			height: 97%;
+			background: url(images/dl.png) no-repeat;
+			float: left;
+			margin-left: 1%;
+		}
+		
+		/*================轮播============================*/
+		ul {
+		list-style: outside none none;
+	}
+	.slider, .slider-panel img, .slider-extra {
+		width: 100%;
+		height: 10%;
+	}
+	.slider {
+		width: 100%;
+		height: 200px;
+		margin-top: 7.5%;
+		text-align: center;
+		position: relative;
+	}
+	.slider-panel, .slider-nav, .slider-pre, .slider-next {
+		position: absolute;
+		z-index: 8;
+	}
+	.slider-panel {
+		position: absolute;
+	}
+	.slider-panel img {
+		border: none;
+	}
+	.slider-extra {
+		position: relative;
+	}
+	.slider-nav {
+		margin-top: 18%;
+		margin-left: 80%;
+		position: absolute;
+		
+	}
+	.slider-nav li {
+		background: #999;
+		opacity:0.3;
+		color: #fff;
+		cursor: pointer;
+		margin: 0 2px;
+		overflow: hidden;
+		text-align: center;
+		display: inline-block;
+		height: 10px;
+		line-height: 10px;
+		width: 30px;
+	}
+	.slider-nav .slider-item-selected {
+		background: #111;
+	}
+	.slider-next {
+		left: 100%;
+		margin-left: -28px;
+	}
+	/*=================section=========================*/
+	#section{
+		/*margin-top: 20%;*/
+	}
+	span{
+		color:#fff;	
+		font-size: 1.8rem;
+		line-height: 5rem;
+		margin-left: 30%;
+	}
+	.jd{
+		width: 100%;
+		height: 10rem;
+		/*background: red;*/
+		}
+		.jd_1{
+			width: 33.3333%;
+			height: 100%;
+			background: pink;
+			border-radius:15px 10px 10px 15px/15px 0px 0px 15px;
+			border-right: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.jd_2{
+			width: 33.3333%;
+			height: 100%;
+			background: pink;
+			border-right: 2px solid #fff;
+			border-left: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.jd_2_1{
+			width: 100%;
+			height: 50%;
+			background: pink;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+		}
+		.jd_2_2{
+			width: 100%;
+			height: 50%;
+			background: pink;
+			border-top: 1px solid #fff;
+			box-sizing: border-box;
+		}
+		.jd_3{
+			width: 33.3333%;
+			height: 100%;
+			background: pink;
+			border-radius:0px 15px 15px 0px/0px 15px 15px 0px;
+			border-left: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.jd_3_1{
+			width: 100%;
+			height: 50%;
+			background: pink;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+			border-radius:0px 15px 0px 0px;
+		}
+		.jd_3_2{
+			width: 100%;
+			height: 50%;
+			background: pink;
+			box-sizing: border-box;
+			border-top: 2px solid #fff;
+			border-radius:0px 0px 15px 0px;
+		}
+		.jp{
+		width: 100%;
+		height: 10rem;
+		margin-top: 5px;
+		/*background: red;*/
+		}
+		.jp_1{
+			width: 33.3333%;
+			height: 100%;
+			background: blue;
+			border-radius:15px 10px 10px 15px/15px 0px 0px 15px;
+			border-right: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.jp_2{
+			width: 33.3333%;
+			height: 100%;
+			background: blue;
+			border-right: 2px solid #fff;
+			border-left: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.jp_2_1{
+			width: 100%;
+			height: 50%;
+			background: blue;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+		}
+		.jp_2_2{
+			width: 100%;
+			height: 50%;
+			background: blue;
+			border-top: 2px solid #fff;
+			box-sizing: border-box;
+		}
+		.jp_3{
+			width: 33.3333%;
+			height: 100%;
+			background: blue;
+			border-radius:0px 15px 15px 0px/0px 15px 15px 0px;
+			border-left: 2px solid #fff;
+			/*border-right: 1px solid #fff;*/
+			box-sizing: border-box;
+			float: left;
+		}
+		.jp_3_1{
+			width: 100%;
+			height: 50%;
+			background: blue;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+			border-radius:0px 15px 0px 0px;
+		}
+		.jp_3_2{
+			width: 100%;
+			height: 50%;
+			background: blue;
+			box-sizing: border-box;
+			border-top: 2px solid #fff;
+			border-radius:0px 0px 15px 0px;
+		}
+		.ly{
+		width: 100%;
+		height: 10rem;
+		margin-top: 5px;
+		/*background: red;*/
+		}
+		.ly_1{
+			width: 33.3333%;
+			height: 100%;
+			background: greenyellow;
+			border-radius:15px 10px 10px 15px/15px 0px 0px 15px;
+			border-right: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.ly_2{
+			width: 33.3333%;
+			height: 100%;
+			background: greenyellow;
+			border-right: 2px solid #fff;
+			border-left: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.ly_2_1{
+			width: 100%;
+			height: 50%;
+			background: greenyellow;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+		}
+		.ly_2_2{
+			width: 100%;
+			height: 50%;
+			background: greenyellow;
+			border-top: 2px solid #fff;
+			box-sizing: border-box;
+		}
+		.ly_3{
+			width: 33.3333%;
+			height: 100%;
+			background: greenyellow;
+			border-radius:0px 15px 15px 0px/0px 15px 15px 0px;
+			border-left: 2px solid #fff;
+			/*border-right: 1px solid #fff;*/
+			box-sizing: border-box;
+			float: left;
+		}
+		.ly_3_1{
+			width: 100%;
+			height: 50%;
+			background: greenyellow;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+			border-radius:0px 15px 0px 0px;
+		}
+		.ly_3_2{
+			width: 100%;
+			height: 50%;
+			background: greenyellow;
+			box-sizing: border-box;
+			border-top: 2px solid #fff;
+			border-radius:0px 0px 15px 0px;
+		}
+		.jw{
+		width: 100%;
+		height: 10rem;
+		margin-top: 5px;
+		/*background: red;*/
+		}
+		.jw_1{
+			width: 33.3333%;
+			height: 100%;
+			background: orange;
+			border-radius:15px 10px 10px 15px/15px 0px 0px 15px;
+			border-right: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.jw_1_1{
+			width: 100%;
+			height: 50%;
+			background: orange;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+			border-radius:15px 0px 0px 0px;
+		}
+		.jw_1_2{
+			width: 100%;
+			height: 50%;
+			background: orange;
+			border-top: 2px solid #fff;
+			box-sizing: border-box;
+			border-radius:0px 0px 0px 15px;
+		}
+		.jw_2{
+			width: 33.3333%;
+			height: 100%;
+			background: orange;
+			border-right: 2px solid #fff;
+			border-left: 2px solid #fff;
+			box-sizing: border-box;
+			float: left;
+		}
+		.jw_2_1{
+			width: 100%;
+			height: 50%;
+			background: orange;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+		}
+		.jw_2_2{
+			width: 100%;
+			height: 50%;
+			background: orange;
+			border-top: 2px solid #fff;
+			box-sizing: border-box;
+		}
+		.jw_3{
+			width: 33.3333%;
+			height: 100%;
+			background: orange;
+			border-radius:0px 15px 15px 0px/0px 15px 15px 0px;
+			border-left: 2px solid #fff;
+			/*border-right: 1px solid #fff;*/
+			box-sizing: border-box;
+			float: left;
+		}
+		.jw_3_1{
+			width: 100%;
+			height: 50%;
+			background: orange;
+			border-bottom: 1px solid #fff;
+			box-sizing: border-box;
+			border-radius:0px 15px 0px 0px;
+		}
+		.jw_3_2{
+			width: 100%;
+			height: 50%;
+			background: orange;
+			box-sizing: border-box;
+			border-top: 2px solid #fff;
+			border-radius:0px 0px 15px 0px;
+		}
+	</style>
+	<body>
+		<div id="nav">
+			<input type="text" name="" id="" placeholder="搜索:目的地/酒店/景点/航班号" />
+			<div class="dl">
+				
+			</div>
+		</div>
+		<div class="slider">
+			<ul class="slider-main">
+				<li class="slider-panel">
+					<img src="images/1z.jpg"/>
+				</li>
+				<li class="slider-panel">
+					<img src="images/2z.jpg"/>
+				</li>
+				<li class="slider-panel">
+					<img src="images/3z.jpg"/>
+				</li>
+				<li class="slider-panel">
+					<img src="images/4z.jpg"/>
+				</li>
+			</ul>
+			<div class="slider-extra">
+				<ul class="slider-nav">
+					<li class="slider-item"></li>
+					<li class="slider-item"></li>
+					<li class="slider-item"></li>
+					<li class="slider-item"></li>
+				</ul>
+				<div class="slider-page">
+					<a class="slider-pre" href="javascript:;;">&lt;</a>
+					<a class="slider-next" href="javascript:;;">&gt;</a>
+				</div>
+			</div>
+		</div>
+		<div id="section">
+			<div class="jd">
+				<div class="jd_1">
+					<span>
+						酒店
+					</span>
+				</div>
+				<div class="jd_2">
+					<div class="jd_2_1">
+						<span>
+							海外酒店
+						</span>
+					</div>
+					<div class="jd_2_2">
+						<span>
+							特价酒店
+						</span>
+					</div>
+				</div>
+				<div class="jd_3">
+					<div class="jd_3_1">
+						<span>
+							团购
+						</span>
+					</div>
+					<div class="jd_3_2">
+						<span>
+							民宿/客栈
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="jp">
+				<div class="jp_1">
+					
+				</div>
+				<div class="jp_2">
+					<div class="jp_2_1">
+						
+					</div>
+					<div class="jp_2_2">
+						
+					</div>
+				</div>
+				<div class="jp_3">
+					<div class="jp_3_1">
+						
+					</div>
+					<div class="jp_3_2">
+						
+					</div>
+				</div>
+			</div>
+			<div class="ly">
+				<div class="ly_1">
+					
+				</div>
+				<div class="ly_2">
+					<div class="ly_2_1">
+						
+					</div>
+					<div class="ly_2_2">
+						
+					</div>
+				</div>
+				<div class="ly_3">
+					<div class="ly_3_1">
+						
+					</div>
+					<div class="ly_3_2">
+						
+					</div>
+				</div>
+			</div>
+			<div class="jw">
+				<div class="jw_1">
+					<div class="jw_1_1">
+						
+					</div>
+					<div class="jw_1_2">
+						
+					</div>
+				</div>
+				<div class="jw_2">
+					<div class="jw_2_1">
+						
+					</div>
+					<div class="jw_2_2">
+						
+					</div>
+				</div>
+				<div class="ly_3">
+					<div class="jw_3_1">
+						
+					</div>
+					<div class="jw_3_2">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="images/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		var length,
+			currentIndex = 0,
+			interval,
+			hasStarted = false, //是否已经开始轮播
+			t = 3000; //轮播时间间隔
+		length = $('.slider-panel').length;
+		
+		//将除了第一张图片隐藏
+		$('.slider-panel:not(:first)').hide();
+		//将第一个slider-item设为激活状态
+		$('.slider-item:first').addClass('slider-item-selected');
+		//隐藏向前、向后翻按钮
+		$('.slider-page').hide();
+		
+		//鼠标上悬时显示向前、向后翻按钮,停止滑动，鼠标离开时隐藏向前、向后翻按钮，开始滑动
+		$('.slider-panel, .slider-pre, .slider-next').hover(function() {
+			stop();
+			$('.slider-page').show();
+		}, function() {
+			$('.slider-page').hide();
+			start();
+		});
+		
+		$('.slider-item').hover(function(e) {
+			stop();
+			var preIndex = $(".slider-item").filter(".slider-item-selected").index();
+			currentIndex = $(this).index();
+			play(preIndex, currentIndex);
+		}, function() {
+			start();
+		});
+		
+		$('.slider-pre').unbind('click');
+		$('.slider-pre').bind('click', function() {
+			pre();
+		});
+		$('.slider-next').unbind('click');
+		$('.slider-next').bind('click', function() {
+			next();
+		});
+		
+		/**
+		 * 向前翻页
+		 */
+		function pre() {
+			var preIndex = currentIndex;
+			currentIndex = (--currentIndex + length) % length;
+			play(preIndex, currentIndex);
+		}
+		/**
+		 * 向后翻页
+		 */
+		function next() {
+			var preIndex = currentIndex;
+			currentIndex = ++currentIndex % length;
+			play(preIndex, currentIndex);
+		}
+		/**
+		 * 从preIndex页翻到currentIndex页
+		 * preIndex 整数，翻页的起始页
+		 * currentIndex 整数，翻到的那页
+		 */
+		function play(preIndex, currentIndex) {
+			$('.slider-panel').eq(preIndex).fadeOut(500)
+				.parent().children().eq(currentIndex).fadeIn(1000);
+			$('.slider-item').removeClass('slider-item-selected');
+			$('.slider-item').eq(currentIndex).addClass('slider-item-selected');
+		}
+		
+		/**
+		 * 开始轮播
+		 */
+		function start() {
+			if(!hasStarted) {
+				hasStarted = true;
+				interval = setInterval(next, t);
+			}
+		}
+		/**
+		 * 停止轮播
+		 */
+		function stop() {
+			clearInterval(interval);
+			hasStarted = false;
+		}
+		
+		//开始轮播
+		start();
+	});
+	</script>
+</html>
